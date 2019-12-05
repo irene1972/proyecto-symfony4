@@ -1,2 +1,0 @@
-http://proyecto-symfony.com.devel:8080/
-http://localhost:8080/proyecto-symfony/public/
