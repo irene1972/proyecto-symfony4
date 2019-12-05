@@ -1,7 +1,16 @@
-tasks:
-    path: /tasks
-    controller: App\Controller\TaskController::index
 
 #user:
     #path: /user
     #controller: App\Controller\UserController::getUser
+
+tasks:
+    path: /tasks
+    controller: App\Controller\TaskController::index
+
+tasks_irene_test_relation_user_task:
+    path: /irene_test_relation_user_task
+    controller: App\Controller\TaskController::irene_test_relation_user_task
+
+tasks_irene_test2_relation_user_task:
+    path: /irene_test2_relation_user_task
+    controller: App\Controller\TaskController::irene_test2_relation_user_task
