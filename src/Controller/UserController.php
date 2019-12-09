@@ -28,14 +28,22 @@ class UserController extends AbstractController
         //Comprobar si el form se ha enviado
         if( $form->isSubmitted() && $form->isValid() ){
 
-            //Modificamos el objeto para guardarlo
+            //Modificamos el objeto para guardarlo. Seteamos Rol
             $user->setRole('ROLE_USER');
 
-            //Ciframos la contraseña
+            //Seteamos hora de creacion
+            $user->setCreatedAt( new \DateTime('now') );
+
+            //Ciframos la contraseña y seteamos contraseña
             $encoded = $encoder->encodePassword( $user, $user->getPassword() );
             $user->setPassword( $encoded );
 
-            var_dump($user);
+            //var_dump($user);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist( $user );
+            $em->flush();
+
+            return $this->redirectToRoute('tasks');
 
         }
 
