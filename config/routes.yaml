@@ -1,7 +1,7 @@
 
-#user:
-    #path: /user
-    #controller: App\Controller\UserController::getUser
+register:
+    path: /registro
+    controller: App\Controller\UserController::register
 
 tasks:
     path: /tasks
