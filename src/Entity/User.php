@@ -7,13 +7,15 @@ use Doctrine\Common\Collections\Collection;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\Security\Core\User\UserInterface;
+
 /**
  * User
  *
  * @ORM\Table(name="users")
  * @ORM\Entity
  */
-class User
+class User implements UserInterface
 {
     /**
      * @var int
@@ -158,6 +160,21 @@ class User
     public function getTasks(): Collection
     {
         return $this->tasks;
+    }
+
+    public function getUsername(){
+        return $this->email;
+    }
+
+    public function getSalt(){
+        return null;
+    }
+
+    public function getRoles(){
+        return array('ROLE_USER');
+    }
+
+    public function eraseCredentials(){
     }
 
 }
