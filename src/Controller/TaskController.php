@@ -134,6 +134,22 @@ class TaskController extends AbstractController
         ]);
     }
 
+    public function delete( UserInterface $user_loged, Task $task ){
+
+        if( !$user_loged || $user_loged->getId() != $task->getUser()->getId() )
+            return $this->redirectToRoute('tasks');
+        
+        if( !$task )
+            return $this->redirectToRoute('tasks');
+
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($task);
+        $em->flush();
+
+        return $this->redirectToRoute('tasks');
+        
+    }
+
     public function irene_test_relation_user_task(){
 
                 // Prueba de Entidades y Relaciones (mostramos todas las tareas)

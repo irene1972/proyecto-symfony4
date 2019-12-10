@@ -33,6 +33,10 @@ task_edit:
     path: /editar-tarea/{id}
     controller: App\Controller\TaskController::edit
 
+task_delete:
+    path: /borrar-tarea/{id}
+    controller: App\Controller\TaskController::delete
+
 ###########################################################
 
 tasks_irene_test_relation_user_task:
