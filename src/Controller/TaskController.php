@@ -12,10 +12,14 @@ class TaskController extends AbstractController
 {
     public function index()
     {
-        // Pendiente de acabar
+        // Listado de todas las tareas
+        $doctrine = $this->getDoctrine();
+        $task_repository = $doctrine->getRepository(Task::class);
+        //$tasks = $task_repository->findAll();
+        $tasks = $task_repository->findBy( [], ['id' => 'DESC'] );
 
         return $this->render('task/index.html.twig', [
-            'controller_name' => 'TaskController'
+            'tasks' => $tasks
         ]);
     }
 

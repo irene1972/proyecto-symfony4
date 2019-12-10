@@ -96,3 +96,20 @@ button:hover,
 input[type="submit"]:hover{
   background-color: #047425;
 }
+
+table{
+  width: 100%;
+}
+
+table th, table td{
+  padding: 15px;
+  padding-right: 25px;
+  padding-left: 25px;
+  border-bottom: 1px solid #EEE;
+  background-color: #F6F6F6;
+  text-align: center;
+}
+
+table td{
+  background-color: #E9FFEA;
+}
