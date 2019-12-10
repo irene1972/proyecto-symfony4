@@ -92,6 +92,14 @@ class TaskController extends AbstractController
         ]);
     }
 
+    public function myTasks( UserInterface $user_loged ){
+        $tasks = $user_loged->getTasks();
+
+        return $this->render('task/my-tasks.html.twig', [
+            'tasks' => $tasks
+        ]);
+    }
+
     public function irene_test_relation_user_task(){
 
                 // Prueba de Entidades y Relaciones (mostramos todas las tareas)
