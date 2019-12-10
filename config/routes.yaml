@@ -3,9 +3,22 @@ register:
     path: /registro
     controller: App\Controller\UserController::register
 
+login:
+    path: /login
+    controller: App\Controller\UserController::login
+
+logout:
+    path: /logout
+    #controller: App\Controller\UserController::logout
+
+###########################################################
+
 tasks:
     path: /
     controller: App\Controller\TaskController::index
+
+
+
 
 tasks_irene_test_relation_user_task:
     path: /irene_test_relation_user_task

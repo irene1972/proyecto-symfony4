@@ -12,19 +12,7 @@ class TaskController extends AbstractController
 {
     public function index()
     {
-        // Prueba de Entidades y Relaciones (mostramos todos los usuarios y las tareas de cada uno)
-        $doctrine = $this->getDoctrine();
-        $user_repository = $doctrine->getRepository(User::class);
-        $users = $user_repository->findAll();
-
-        foreach( $users as $user ){
-            //echo $user->getName() . ' - ' . $user->getSurname() . '<br>';
-            echo "<h1>{$user->getName()}{$user->getSurname()}</h1>";
-
-            foreach( $user->getTasks() as $task ){
-                echo $task->getUser()->getEmail() . ': ' . $task->getTitle() . '<br>';
-            }
-        }
+        // Pendiente de acabar
 
         return $this->render('task/index.html.twig', [
             'controller_name' => 'TaskController'
