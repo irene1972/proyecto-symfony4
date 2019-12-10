@@ -124,6 +124,10 @@ table td{
   background-color: #00AA33;
 }
 
+.buttons{
+  width: 33%;
+}
+
 .buttons .btn-edit{
   background-color: orange;
   border-color: #F38B06;
