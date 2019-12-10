@@ -1,10 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Crear tarea{% endblock %}
+{% block title %}
+    {% if edit is defined %}
+        Modificar tarea
+    {% else %}
+        Crear tarea
+    {% endif %}
+{% endblock %}
 
 {% block body %}
 <div class="example-wrapper">
-    <h2>Crear tarea</h2>
+    <h2>
+    {% if edit is defined %}
+        Modificar tarea
+    {% else %}
+        Crear tarea
+    {% endif %}
+    </h2>
     {# iniciamos formulario #}
     {{form_start(form)}}
     {# imprimimos los campos del formulario #}

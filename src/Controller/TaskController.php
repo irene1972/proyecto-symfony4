@@ -100,6 +100,40 @@ class TaskController extends AbstractController
         ]);
     }
 
+    public function edit( Request $request, UserInterface $user_loged, Task $task ){
+
+        //var_dump($task);
+        if( !$user_loged || $user_loged->getId() != $task->getUser()->getId() )
+            return $this->redirectToRoute('tasks');
+
+        $form = $this->createForm(TaskType::class, $task);
+
+        $form->handleRequest( $request );
+
+        if( $form->isSubmitted() && $form->isValid() ){
+
+            //$task->setCreatedAt(new \DateTime('now'));
+            //$task->setUser($user_loged);
+            
+            //var_dump($task);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($task);
+            $em->flush();
+
+            return $this->redirect( 
+                $this->generateUrl('task_detail', [
+                    'id' => $task->getId()
+                ]) 
+            );
+
+        }
+
+        return $this->render('task/creation.html.twig', [
+            'edit' => true,
+            'form' => $form->createView()
+        ]);
+    }
+
     public function irene_test_relation_user_task(){
 
                 // Prueba de Entidades y Relaciones (mostramos todas las tareas)

@@ -32,7 +32,7 @@ class TaskType extends AbstractType{
                   'label' => 'Horas presupuestadas',
                 ])
                 ->add('submit',SubmitType::class, [
-                    'label' => 'Crear tarea',
+                    'label' => 'Guardar',
                     //'attr' => ['class' => 'btn btn-success'],
                   ]);
 
