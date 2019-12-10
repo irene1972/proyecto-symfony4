@@ -33,7 +33,7 @@ class User implements UserInterface
      *
      * @ORM\Column(name="role", type="string", length=50, nullable=true, options={"default"="NULL"})
      */
-    private $role = 'NULL';
+    private $role;
 
     /**
      * @var string|null
@@ -42,7 +42,7 @@ class User implements UserInterface
      * @Assert\NotBlank
      * @Assert\Regex("/[a-zA-Z ]+/")
      */
-    private $name = 'NULL';
+    private $name;
 
     /**
      * @var string|null
@@ -51,7 +51,7 @@ class User implements UserInterface
      * @Assert\NotBlank
      * @Assert\Regex("/[a-zA-Z ]+/")
      */
-    private $surname = 'NULL';
+    private $surname;
 
     /**
      * @var string|null
@@ -63,7 +63,7 @@ class User implements UserInterface
      *  checkMX = true
      * )
      */
-    private $email = 'NULL';
+    private $email;
 
     /**
      * @var string|null
@@ -71,7 +71,7 @@ class User implements UserInterface
      * @ORM\Column(name="password", type="string", length=255, nullable=true, options={"default"="NULL"})
      * @Assert\NotBlank
      */
-    private $password = 'NULL';
+    private $password;
 
     /**
      * @var \DateTime|null
