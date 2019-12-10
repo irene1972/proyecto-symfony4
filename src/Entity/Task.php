@@ -26,28 +26,28 @@ class Task
      *
      * @ORM\Column(name="title", type="string", length=255, nullable=true, options={"default"="NULL"})
      */
-    private $title = 'NULL';
+    private $title;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="content", type="text", length=65535, nullable=true, options={"default"="NULL"})
      */
-    private $content = 'NULL';
+    private $content;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="priority", type="string", length=20, nullable=true, options={"default"="NULL"})
      */
-    private $priority = 'NULL';
+    private $priority;
 
     /**
      * @var int|null
      *
      * @ORM\Column(name="hours", type="integer", nullable=true, options={"default"="NULL"})
      */
-    private $hours = 'NULL';
+    private $hours;
 
     /**
      * @var \DateTime|null
@@ -107,12 +107,12 @@ class Task
         return $this;
     }
 
-    public function getHours(): ?int
+    public function getHours()
     {
         return $this->hours;
     }
 
-    public function setHours(?int $hours): self
+    public function setHours($hours): self
     {
         $this->hours = $hours;
 

@@ -5,7 +5,12 @@
 {% block body %}
 <div class="example-wrapper">
     <h2>Crear tarea</h2>
-    {# {{dump(task)}} #}
+    {# iniciamos formulario #}
+    {{form_start(form)}}
+    {# imprimimos los campos del formulario #}
+    {{form_widget(form)}}
+    {# cerramos formulario #}
+    {{form_end(form)}}
 
      
 </div>
