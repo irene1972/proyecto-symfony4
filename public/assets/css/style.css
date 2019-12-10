@@ -113,3 +113,21 @@ table th, table td{
 table td{
   background-color: #E9FFEA;
 }
+
+.buttons a{
+  text-decoration: none;
+  border: 1px solid green;
+  padding: 10px;
+  color: white;
+  background-color: #00AA33;
+}
+
+.buttons .btn-edit{
+  background-color: orange;
+  border-color: #F38B06;
+}
+
+.buttons .btn-delete{
+  background-color: red;
+  border-color: #B90808;
+}
