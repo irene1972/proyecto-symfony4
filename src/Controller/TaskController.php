@@ -23,6 +23,36 @@ class TaskController extends AbstractController
         ]);
     }
 
+    // Seems that not works but IT WORKS!!
+    public function detail( Task $task ){
+        if( !$task ){
+            return $this->redirectToRoute('tasks');
+        }
+
+        return $this->render( 'task/detail.html.twig', [
+            'task' => $task
+        ]);
+    }
+
+    // Another solution
+    // public function detail( $id ){
+
+    //     $doctrine = $this->getDoctrine();
+    //     $task_repository = $doctrine->getRepository(Task::class);
+    //     $task = $task_repository->find($id);
+        
+    //     if( !$task ){
+    //         return $this->redirectToRoute('tasks');
+    //     }
+
+    //     return $this->render( 'task/detail.html.twig', [
+    //         'id' => $id,
+    //         'task' => $task,
+    //         'user_' => $task->getUser(),
+    //         'email_' => $task->getUser()->getEmail()
+    //     ]);
+    // }
+
     public function irene_test_relation_user_task(){
 
                 // Prueba de Entidades y Relaciones (mostramos todas las tareas)

@@ -17,6 +17,10 @@ tasks:
     path: /
     controller: App\Controller\TaskController::index
 
+task_detail:
+    path: /tarea/{id}
+    controller: App\Controller\TaskController::detail
+
 ###########################################################
 
 tasks_irene_test_relation_user_task:
