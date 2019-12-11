@@ -58,6 +58,11 @@ class UserController extends AbstractController
         $error = $auth->getLastAuthenticationError();
         $lastUsername = $auth->getLastUsername();
 
+        // Si nos hemos logado la pantalla de inicio debe ser /tareas
+        if( $this->isGranted('ROLE_USER') == true ){
+            return $this->redirectToRoute('tasks');
+        }
+
         return $this->render('user/login.html.twig', array(
             'error' => $error,
             'last_username' => $lastUsername
